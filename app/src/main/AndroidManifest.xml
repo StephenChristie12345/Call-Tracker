@@ -13,6 +13,12 @@
         android:theme="@style/Theme.CallTracker"
         tools:targetApi="31">
         <activity
+            android:name=".Hours6"
+            android:exported="false" />
+        <activity
+            android:name=".Hour5"
+            android:exported="false" />
+        <activity
             android:name=".Hour4"
             android:exported="false" />
         <activity
