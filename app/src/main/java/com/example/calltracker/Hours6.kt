@@ -16,7 +16,7 @@ class Hour6 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.Hour6)
+        setContentView(R.layout.activity_hours6)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -37,19 +37,19 @@ class Hour6 : AppCompatActivity() {
         }
 
         btnDone.setOnClickListener {
-            val intent = Intent(this, ScoreActivity::class.java) //
+            val intent = Intent(this, ScoreActivity::class.java)
 
             // Pass forward all previous hour data
-            intent.putExtra("hour1_calls", getIntent().getIntExtra("hour1_calls", 0))
-            intent.putExtra("hour1_surveys", getIntent().getIntExtra("hour1_surveys", 0))
-            intent.putExtra("hour2_calls", getIntent().getIntExtra("hour2_calls", 0))
-            intent.putExtra("hour2_surveys", getIntent().getIntExtra("hour2_surveys", 0))
-            intent.putExtra("hour3_calls", getIntent().getIntExtra("hour3_calls", 0))
-            intent.putExtra("hour3_surveys", getIntent().getIntExtra("hour3_surveys", 0))
-            intent.putExtra("hour4_calls", getIntent().getIntExtra("hour4_calls", 0))
-            intent.putExtra("hour4_surveys", getIntent().getIntExtra("hour4_surveys", 0))
-            intent.putExtra("hour5_calls", getIntent().getIntExtra("hour5_calls", 0))
-            intent.putExtra("hour5_surveys", getIntent().getIntExtra("hour5_surveys", 0))
+            intent.putExtra("hour1_calls", intent.getIntExtra("hour1_calls", 0))
+            intent.putExtra("hour1_surveys", intent.getIntExtra("hour1_surveys", 0))
+            intent.putExtra("hour2_calls", intent.getIntExtra("hour2_calls", 0))
+            intent.putExtra("hour2_surveys", intent.getIntExtra("hour2_surveys", 0))
+            intent.putExtra("hour3_calls", intent.getIntExtra("hour3_calls", 0))
+            intent.putExtra("hour3_surveys", intent.getIntExtra("hour3_surveys", 0))
+            intent.putExtra("hour4_calls", intent.getIntExtra("hour4_calls", 0))
+            intent.putExtra("hour4_surveys", intent.getIntExtra("hour4_surveys", 0))
+            intent.putExtra("hour5_calls", intent.getIntExtra("hour5_calls", 0))
+            intent.putExtra("hour5_surveys", intent.getIntExtra("hour5_surveys", 0))
 
             // Add Hour 6 data
             intent.putExtra("hour6_calls", callCount)

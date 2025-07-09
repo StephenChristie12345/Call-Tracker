@@ -24,9 +24,9 @@ class Hour5 : AppCompatActivity() {
             insets
         }
 
-        val btnCall = findViewById<Button>(R.id.button18)
-        val btnSurvey = findViewById<Button>(R.id.button19)
-        val btnNext = findViewById<Button>(R.id.button20)
+        val btnCall = findViewById<Button>(R.id.button17)
+        val btnSurvey = findViewById<Button>(R.id.button18)
+        val btnNext = findViewById<Button>(R.id.button19)
 
         btnCall.setOnClickListener {
             callCount++
@@ -37,7 +37,7 @@ class Hour5 : AppCompatActivity() {
         }
 
         btnNext.setOnClickListener {
-            val intent = Intent(this, Hour5::class.java)
+            val intent = Intent(this, Hour6::class.java)
 
             // Pass forward previous data
             intent.putExtra("hour1_calls", intent.getIntExtra("hour1_calls", 0))

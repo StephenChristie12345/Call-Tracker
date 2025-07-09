@@ -24,9 +24,9 @@ class Hour4 : AppCompatActivity() {
             insets
         }
 
-        val btnCall = findViewById<Button>(R.id.button14)
-        val btnSurvey = findViewById<Button>(R.id.button15)
-        val btnNext = findViewById<Button>(R.id.button16)
+        val btnCall = findViewById<Button>(R.id.button13)
+        val btnSurvey = findViewById<Button>(R.id.button14)
+        val btnNext = findViewById<Button>(R.id.button15)
 
         btnCall.setOnClickListener {
             callCount++
