@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Call Tracker</string>
+    <string name="button">Button</string>
 </resources>
