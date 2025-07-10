@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class hour6 : AppCompatActivity() {
+class Hour6 : AppCompatActivity() {
 
     private var callCount = 0
     private var surveyCount = 0

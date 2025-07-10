@@ -12,10 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CallTracker"
         tools:targetApi="31">
+        <activity
+            android:name=".ActivityScore"
+            android:exported="false" />
+        <activity
+            android:name=".Hour6"
+            android:exported="false" />
+
         <service
             android:name=".MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".Score"
