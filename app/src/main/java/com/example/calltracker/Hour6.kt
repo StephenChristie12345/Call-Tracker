@@ -37,7 +37,7 @@ class Hour6 : AppCompatActivity() {
         }
 
         btnDone.setOnClickListener {
-            val intent = Intent(this, ScoreActivity::class.java)
+            val nextintent = Intent(this, ActivityScore::class.java)
 
             // Pass forward all previous hour data
             intent.putExtra("hour1_calls", intent.getIntExtra("hour1_calls", 0))

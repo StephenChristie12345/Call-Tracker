@@ -40,7 +40,8 @@ class Hour5 : AppCompatActivity() {
             surveyCount++
         }
         btnNext.setOnClickListener {
-            val intent = Intent(this, Hour6::class.java)
+            val incomingIntent = intent
+            val nextIntent = Intent(this, Hour6::class.java)
 
             // Pass all previous hour data from incomingIntent to nextIntent
             nextIntent.putExtra("hour1_calls", incomingIntent.getIntExtra("hour1_calls", 0))
