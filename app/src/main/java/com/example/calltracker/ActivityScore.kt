@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ActivityScore : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,28 +20,40 @@ class ActivityScore : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnRestart = findViewById<Button>(R.id.btnRestart)
-        val btnExit = findViewById<Button>(R.id.btnExit)
-        val txtSummary = findViewById<TextView>(R.id.txtSummary)
+        // Get data from all hours
+        val hour1Calls = intent.getIntExtra("hour1_calls", 0)
+        val hour1Surveys = intent.getIntExtra("hour1_surveys", 0)
+        val hour2Calls = intent.getIntExtra("hour2_calls", 0)
+        val hour2Surveys = intent.getIntExtra("hour2_surveys", 0)
+        val hour3Calls = intent.getIntExtra("hour3_calls", 0)
+        val hour3Surveys = intent.getIntExtra("hour3_surveys", 0)
+        val hour4Calls = intent.getIntExtra("hour4_calls", 0)
+        val hour4Surveys = intent.getIntExtra("hour4_surveys", 0)
+        val hour5Calls = intent.getIntExtra("hour5_calls", 0)
+        val hour5Surveys = intent.getIntExtra("hour5_surveys", 0)
+        val hour6Calls = intent.getIntExtra("hour6_calls", 0)
+        val hour6Surveys = intent.getIntExtra("hour6_surveys", 0)
 
-        btnRestart.setOnClickListener {
-            val intent = Intent(this, Hour1::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent)
-            finish()
-        }
-        btnExit.setOnClickListener {
-            finishAffinity() // closes all activities and exits app
-        }
+        // Calculate totals
+        val totalCalls = hour1Calls + hour2Calls + hour3Calls + hour4Calls + hour5Calls + hour6Calls
+        val totalSurveys = hour1Surveys + hour2Surveys + hour3Surveys + hour4Surveys + hour5Surveys + hour6Surveys
 
-        val summary = StringBuilder()
-        for (i in 1..6) {
-            val calls = intent.getIntExtra("hour${i}_calls", 0)
-            val surveys = intent.getIntExtra("hour${i}_surveys", 0)
-            summary.append("Hour $i: $calls calls, $surveys surveys\n")
-        }
+        // Format summary
+        val summary = """
+            Hour 1: $hour1Calls Calls, $hour1Surveys Surveys
+            Hour 2: $hour2Calls Calls, $hour2Surveys Surveys
+            Hour 3: $hour3Calls Calls, $hour3Surveys Surveys
+            Hour 4: $hour4Calls Calls, $hour4Surveys Surveys
+            Hour 5: $hour5Calls Calls, $hour5Surveys Surveys
+            Hour 6: $hour6Calls Calls, $hour6Surveys Surveys
+            
+            ------------------------------
+            Total: $totalCalls Calls, $totalSurveys Surveys
+        """.trimIndent()
 
-        txtSummary.text = summary.toString()
+        // Display summary
+        val scoreTextView = findViewById<TextView>(R.id.textView9)
+        scoreTextView.text = summary
 
     }
 }

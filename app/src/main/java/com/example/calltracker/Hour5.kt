@@ -29,6 +29,7 @@ class Hour5 : AppCompatActivity() {
         val btnCall = findViewById<Button>(R.id.button17) // Call button
         val btnSurvey = findViewById<Button>(R.id.button18) // Survey button
         val btnNext = findViewById<Button>(R.id.button19) // Next button
+        val btnDone = findViewById<Button>(R.id.button20)
 
         // Increase call count when Call button is clicked
         btnCall.setOnClickListener {
@@ -58,6 +59,26 @@ class Hour5 : AppCompatActivity() {
             nextIntent.putExtra("hour5_surveys", surveyCount)
 
             // Start the Hour6 activity
+            startActivity(nextIntent)
+        }
+
+        btnDone.setOnClickListener {
+            val nextIntent = Intent(this, ActivityScore::class.java)
+
+            nextIntent.putExtra("hour1_calls", callCount)
+            nextIntent.putExtra("hour1_surveys", surveyCount)
+
+            nextIntent.putExtra("hour2_calls", 0)
+            nextIntent.putExtra("hour2_surveys", 0)
+            nextIntent.putExtra("hour3_calls", 0)
+            nextIntent.putExtra("hour3_surveys", 0)
+            nextIntent.putExtra("hour4_calls", 0)
+            nextIntent.putExtra("hour4_surveys", 0)
+            nextIntent.putExtra("hour5_calls", 0)
+            nextIntent.putExtra("hour5_surveys", 0)
+            nextIntent.putExtra("hour6_calls", 0)
+            nextIntent.putExtra("hour6_surveys", 0)
+
             startActivity(nextIntent)
         }
     }
