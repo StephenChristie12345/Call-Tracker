@@ -40,12 +40,18 @@ class ActivityScore : AppCompatActivity() {
 
         // Format summary
         val summary = """
-            Hour 1: $hour1Calls Calls, $hour1Surveys Surveys
-            Hour 2: $hour2Calls Calls, $hour2Surveys Surveys
-            Hour 3: $hour3Calls Calls, $hour3Surveys Surveys
-            Hour 4: $hour4Calls Calls, $hour4Surveys Surveys
-            Hour 5: $hour5Calls Calls, $hour5Surveys Surveys
-            Hour 6: $hour6Calls Calls, $hour6Surveys Surveys
+            Hour 1: 
+            $hour1Calls Calls, $hour1Surveys Surveys
+            Hour 2:
+            $hour2Calls Calls, $hour2Surveys Surveys
+            Hour 3:
+            $hour3Calls Calls, $hour3Surveys Surveys
+            Hour 4: 
+            $hour4Calls Calls, $hour4Surveys Surveys
+            Hour 5: 
+            $hour5Calls Calls, $hour5Surveys Surveys
+            Hour 6: 
+            $hour6Calls Calls, $hour6Surveys Surveys
             
             ------------------------------
             Total: $totalCalls Calls, $totalSurveys Surveys
