@@ -20,6 +20,15 @@ class ActivityScore : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val btnRestart = findViewById<Button>(R.id.button30)
+        btnRestart.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        val btnExit = findViewById<Button>(R.id.button31)
+
         // Get data from all hours
         val hour1Calls = intent.getIntExtra("hour1_calls", 0)
         val hour1Surveys = intent.getIntExtra("hour1_surveys", 0)
@@ -42,14 +51,19 @@ class ActivityScore : AppCompatActivity() {
         val summary = """
             Hour 1: 
             $hour1Calls Calls, $hour1Surveys Surveys
+            
             Hour 2:
             $hour2Calls Calls, $hour2Surveys Surveys
+            
             Hour 3:
             $hour3Calls Calls, $hour3Surveys Surveys
+            
             Hour 4: 
             $hour4Calls Calls, $hour4Surveys Surveys
+            
             Hour 5: 
             $hour5Calls Calls, $hour5Surveys Surveys
+            
             Hour 6: 
             $hour6Calls Calls, $hour6Surveys Surveys
             
